@@ -70,3 +70,34 @@ git remote add origin https://github.com/giuliabaratella/ NOME PROGETTO
 git push -u origin main
 
 ```
+
+creo nuova repo su github da template
+importo da vscode la repo
+installo composer
+
+```
+composer install
+```
+
+clono il file env.example e lo rinomino in .env
+
+lancio il comando:
+
+```
+php artisan key:generate
+```
+
+e si crea la key del progetto
+
+infine
+
+```
+npm install
+```
+
+lancio entrambi i server ( su due powershell diversi)
+
+```
+npm run dev
+php artisan serve
+```
