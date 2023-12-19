@@ -16,4 +16,8 @@
         <a class="nav-link {{ Route::currentRouteName() == 'products.index' ? 'active' : '' }}"
             href="{{ route('products.index') }}">Prodotti</a>
     </li>
+    <li>
+        <a class="nav-link {{ Route::currentRouteName() == 'pages.about' ? 'active' : '' }}"
+            href="{{ route('pages.about') }}">About</a>
+    </li>
 </ul>

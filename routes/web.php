@@ -39,3 +39,8 @@ Route::get('/products/{id}', function ($id) {
         abort(404);
     }
 })->name('products.show');
+
+Route::get('/about', function () {
+
+    return view('pages.about');
+})->name('pages.about');
