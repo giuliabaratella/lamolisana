@@ -14,7 +14,28 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $products = config('db.pasta');
+    // return redirect('/products');
+    // return redirect()->route('products.index');
+    return view('home');
+})->name('home');
+
+Route::get('/recipes', function () {
+    $recipes = config('db.recipes');
+    return view('recipes.index', compact('recipes'));
+})->name('recipes.index');
+
+Route::get('/products', function () {
+    $products = config('db.products');
     // dd($products);
-    return view('home', compact('products'));
-});
+    return view('products.index', compact('products'));
+})->name('products.index');
+
+Route::get('/products/{id}', function ($id) {
+    $products = config('db.products');
+    if ($id >= 0 && $id < count($products)) {
+        $product = $products[$id];
+        return view('products.show', compact('product'));
+    } else {
+        abort(404);
+    }
+})->name('products.show');
